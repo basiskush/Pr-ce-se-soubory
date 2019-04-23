@@ -6,11 +6,6 @@ Created on Mon Apr 15 08:09:22 2019
 @author: spu35165
 """
 import random
-print("--------------------------------------")
-print("1. Převod na malá písmena \n2. Nahrazení znaku v souboru \n3. Statistika souboru \n4. Generace nahodneho textu")
-print("--------------------------------------")
-volba = int(input("Číslo operace:  "))
-print("--------------------------------------")
 
 def prevod():
     inName = input(" Zadejte jméno souboru:  ")
@@ -95,14 +90,23 @@ def nahodnytext(pocetslov):
     for i in range(pocetslov):
         vysledek=vysledek+(slovo(), )
     return " ".join(vysledek)
-            
 
-if volba == 1:
-    prevod()
-if volba == 2:
-    nahrazeni()
-if volba == 3:
-    statistika()
-if volba == 4:
-    pocetslov=int(input("kolik slov?:   "))
-    print(nahodnytext(pocetslov))
+       
+def menu():
+    print("--------------------------------------")
+    print("1. Převod na malá písmena \n2. Nahrazení znaku v souboru \n3. Statistika souboru \n4. Generace nahodneho textu")
+    print("--------------------------------------")
+    volba = int(input("Číslo operace:  "))
+    print("--------------------------------------")
+    if volba == 1:
+        prevod()
+    if volba == 2:
+        nahrazeni()
+    if volba == 3:
+        statistika()
+    if volba == 4:
+        pocetslov=int(input("kolik slov?:   "))
+        print(nahodnytext(pocetslov))
+    menu()
+
+menu()   
